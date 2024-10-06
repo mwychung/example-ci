@@ -17,3 +17,10 @@ def test_subtract():
 #     assert f2c(122) == pytest.approx(50)
 #     with pytest.raises(AssertionError):
 #         f2c(-600)
+
+def test_convert_fahrenheit_to_celsius():
+    assert f2c(32) == 0          # Freezing point
+    assert f2c(212) == 100       # Boiling point
+    assert f2c(98.6) == pytest.approx(37)  # Body temperature
+    with pytest.raises(AssertionError):
+        f2c(-600)  # This should fail
